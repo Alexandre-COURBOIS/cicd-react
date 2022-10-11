@@ -25,6 +25,6 @@ jobs:
           key: ${{ secrets.KEY }}
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          port: 22
+          port: ${{ secrets.PORT }}
           source: "build/"
           target: "/home/alexandre/web"

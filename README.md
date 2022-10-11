@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Projet initialisé sous React.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Le projet peut-être trouvé sur Github à cette adresse : `https://github.com/Alexandre-COURBOIS/cicd-react`
 
-## Available Scripts
+## Prise en main du projet :
 
-In the project directory, you can run:
+Une fois le projet cloné via Github depuis l'adresse renseignée ci-dessus :
 
-### `npm start`
+### Executer un `npm install`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Permet la mise en place des packets dont le projet à besoin pour fonctionner
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Les différentes commandes pouvant-être executées : 
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Permet l'éxecution des tests de l'application par défaut
+
+### `npm start`
+
+Permet l'execution de l'application afin de la voir sur localhost:3000
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Permet de générer le fichier de build de l'application 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Github Action dans le fichier workflows : 
+`update_on_push.yaml`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Ce github action ne s'execute que sur la branche master
+- L'objectif de celui ci est d'installer le projet, de produire la version de build, ainsi que d'executer les tests grace aux commandes :
+````
+- npm install
+- npm run build
+- npm run test
+````
+- En dernier lieu celui-ci se connecte au serveur via différentes Github actions secret key qui sont elles à définir sur github : 
 
-### `npm run eject`
+Variables à définir : Votre NomUtilisateur & NomDuProjet :
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`https://github.com/VotreNomUtilisateur/NomDuProjet/settings/secrets/actions`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Différentes clées sont à définirs sur l'url adaptée précèdement renseignée en cliquant sur : 
+`New Repository Secret`
