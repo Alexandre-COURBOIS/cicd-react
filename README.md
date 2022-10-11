@@ -54,3 +54,17 @@ Créer :
 Penser également à modifier dans le target path le nom d'utilisateur qui correspondra au votre sur le remote server
 
 Une fois fait, chaque push sur votre dépot permettra la génération d'une version de build automatisée et déposera celle-ci à la racine de votre utilisateur dans le fichier WEB. 
+
+### Dockerfile à la racine du projet :
+`permet de conteneriser l'application sur Dockers : `
+
+Le document DockerFile est accessible dans le dossier web à la racine de mon utilisateur sur l'host celui-ci est le même que celui présent à la racine de ce dépot, chaque commande est commentée afin d'en définir l'utilitée.
+
+Afin de conteneuriser l'application executer : 
+
+- docker build -t `$NomDeVotreImage` .
+- docker run -p `80`:3000 `$NomDeVotreImage`
+
+Ici le port à gauche vaut `80` cependant celui ci peut être d'une autre valeur à vous d'ajuster selon celui qui vous convient, veillez cependant à ne pas configurer un port déjà utilisé.
+
+
