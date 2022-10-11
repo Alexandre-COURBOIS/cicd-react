@@ -13,5 +13,16 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: npm run test
-      - run: ssh -i ${{ secrets.SECRET_PRIVATE_KEY }} ${{ secrets.SECRET_PRIVATE_USERNAME }}@${{ secrets.SECRET_REMOTE_IP }}
+
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: whoami
+
+
+
 
