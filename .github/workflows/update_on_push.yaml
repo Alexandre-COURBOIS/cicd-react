@@ -8,13 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-      - run: npm install
-      - run: npm run build
-      - run: npm run test
+      - name: update github action on launch
+        uses: actions/checkout@v3
 
-      - name: executing remote ssh commands using password
+      - name: executing remote ssh commands using private key
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
@@ -22,6 +19,12 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: whoami
+
+      - name: set up project and generate file
+        uses: actions/setup-node@v3
+      - run: npm install
+      - run: npm run build
+      - run: npm run test
 
 
 
