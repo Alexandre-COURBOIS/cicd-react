@@ -9,8 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: update github action on launch
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+        uses: actions/checkout@v3
 
       - name: executing remote ssh commands using private key
         uses: appleboy/ssh-action@master
