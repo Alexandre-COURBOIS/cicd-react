@@ -8,23 +8,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: update github action on launch
-        uses: actions/checkout@v3
+      steps:
 
-      - name: executing remote ssh commands using private key
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
-          port: ${{ secrets.PORT }}
-          script: |
-            cd ~/
-            npm install
-            npm run test
-            npm run build
-            mkdir web
-            scp -R build ~/web
+        - name: production Code
+          uses: actions/checkout@v2
+        - name: Use Node.js 17.x
+          uses: actions/setup-node@v1
+          with:
+            node-version: 17.x
+        - run: npm install
+        - run: npm run build
+        - run: npm run test
+        - name: Deploy to server
+          uses: appleboy/scp-action@master
+          with:
+            key: ${{ secrets.KEY }}
+            host: ${{ secrets.HOST }}
+            username: ${{ secrets.USERNAME }}
+            port: ${{ secrets.PORT }}
+            source: "build/"
+            target: "/home/alexandre/web"
 
 
 
