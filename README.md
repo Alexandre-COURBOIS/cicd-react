@@ -42,3 +42,15 @@ Variables à définir : Votre NomUtilisateur & NomDuProjet :
 
 Différentes clées sont à définirs sur l'url adaptée précèdement renseignée en cliquant sur : 
 `New Repository Secret`
+
+Créer : 
+```
+- HOST : L'IP du remote server
+- KEY  : Votre clé privé correspondant à la clé public renseignée sur le host server
+- PORT : Port par défaut de la connexion ssh sur le server
+- USERNAME : Votre nom d'utilisateur sur le server
+```
+
+Penser également à modifier dans le target path le nom d'utilisateur qui correspondra au votre sur le remote server
+
+Une fois fait, chaque push sur votre dépot permettra la génération d'une version de build automatisée et déposera celle-ci à la racine de votre utilisateur dans le fichier WEB. 
