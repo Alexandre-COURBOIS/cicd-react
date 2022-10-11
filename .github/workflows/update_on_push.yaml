@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: update github action on launch
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
 
       - name: executing remote ssh commands using private key
         uses: appleboy/ssh-action@master
@@ -18,14 +19,13 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: whoami
+          script: |
+            cd ~/
+            npm install
+            npm run test
+            npm run build
+            mkdir web
 
-      - name: set up project and generate file
-        uses: actions/setup-node@v3
-      - run: npm install
-      - run: npm run build
-      - run: npm run test
-      - run: mkdir web
 
 
 
