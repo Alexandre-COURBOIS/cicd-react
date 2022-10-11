@@ -13,4 +13,5 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: npm run test
+      - run: ssh -i ${{secrets.SECRET_PRIVATE_KEY}} ${{ secrets.SECRET_PRIVATE_USERNAME }}@${{ secrets.SECRET_REMOTE_IP }}
 
