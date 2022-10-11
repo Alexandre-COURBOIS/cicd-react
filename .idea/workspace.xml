@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3e933c27-a878-4b23-9333-37c415409b49" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.github/workflows/update_on_push.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/update_on_push.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +43,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665476576582</updated>
-      <workItem from="1665476577738" duration="5975000" />
+      <workItem from="1665476577738" duration="6148000" />
     </task>
     <servers />
   </component>
